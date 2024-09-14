@@ -1,0 +1,38 @@
+#intializing class
+class Bird:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def fly(self):
+        print(f"{self.name} is flying.")
+
+    def sing(self):
+        print(f"{self.name} is singing.")
+
+# Child class Parrot that inherits from Bird
+class Parrot(Bird):
+    def __init__(self, name, color, can_talk):
+        # Use super() to call the parent class constructor
+        super().__init__(name, color)
+        self.can_talk = can_talk
+
+    def talk(self):
+        if self.can_talk:
+            print(f"{self.name} is talking!")
+        else:
+            print(f"{self.name} can't talk.")
+
+    def mimic(self):
+        print(f"{self.name} is mimicking sounds.")
+
+# Creating an object of the Parrot class
+my_parrot = Parrot("Rio", "blue", True)
+
+# Using methods from the base class
+my_parrot.fly()
+my_parrot.sing()
+
+# Using methods from the child class
+my_parrot.talk()
+my_parrot.mimic()
